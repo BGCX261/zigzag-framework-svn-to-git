@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ScriptComponent>
+  <Script>Script_PlayerSelf </Script>
+  <Lib>UserDef </Lib>
+</ScriptComponent>

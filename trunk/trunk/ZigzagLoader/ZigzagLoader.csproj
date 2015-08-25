@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F5B9D4CF-D91F-4243-BAB0-5AFCBD968A16}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Zigzag.Loader</RootNamespace>
+    <AssemblyName>Zigzag.Loader</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Zigzag.Loader.MainStart</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App\ZigzagApp.cs" />
+    <Compile Include="Common\Util\HighResTimer.cs" />
+    <Compile Include="Engine\Feature.cs" />
+    <Compile Include="Engine\ScriptFeature.cs" />
+    <Compile Include="Engine\GraphicFeature.cs" />
+    <Compile Include="ZigzagWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZigzagWin.Designer.cs">
+      <DependentUpon>ZigzagWin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainStart.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ZigzagWin.resx">
+      <DependentUpon>ZigzagWin.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RuntimeGraphic\RuntimeGraphic.csproj">
+      <Project>{1A9FE2A3-A2AE-485D-AAE8-3C589B57DEBF}</Project>
+      <Name>RuntimeGraphic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RuntimeGui\RuntimeGui.csproj">
+      <Project>{53DB9E24-5B86-4ED5-A2B1-3E6BD0EC9B70}</Project>
+      <Name>RuntimeGui</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RuntimeScript\RuntimeScript.csproj">
+      <Project>{69626590-4CC7-4062-A163-E0CC43444611}</Project>
+      <Name>RuntimeScript</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

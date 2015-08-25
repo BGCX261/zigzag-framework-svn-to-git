@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actor>
+  <Name>Script_PlayerSelf</Name>
+  <TemplateName>PlayerSelf</TemplateName>
+  <ScriptComponent>
+    <Script>Script_PlayerSelf </Script>
+    <Lib>UserDef </Lib>
+  </ScriptComponent>
+</Actor>
